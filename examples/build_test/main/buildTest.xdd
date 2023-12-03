@@ -15,12 +15,12 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="buildTest.xdd" fileCreator="Sicris Rey Embay" fileCreationDate="2023-11-26" fileCreationTime="10:02:04.0000000+08:00" fileModifiedBy="Sicris Rey Embay" fileModificationDate="2023-11-26" fileModificationTime="10:04:51.8805059+08:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q1="http://www.canopen.org/xml/1.1" xsi:type="q1:ProfileBody_Device_CANopen" formatName="CANopen" formatVersion="1.0" fileName="buildTest.xdd" fileCreator="Sicris Rey Embay" fileCreationDate="2023-11-26" fileCreationTime="10:02:04.0000000+08:00" fileModifiedBy="Sicris Rey Embay" fileModificationDate="2023-12-01" fileModificationTime="08:15:36.3917976+08:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <q1:DeviceIdentity>
-        <q1:vendorName></q1:vendorName>
-        <q1:vendorID></q1:vendorID>
+        <q1:vendorName>Build Test</q1:vendorName>
+        <q1:vendorID>0</q1:vendorID>
         <q1:productName>BuildTest</q1:productName>
-        <q1:productID></q1:productID>
+        <q1:productID>1</q1:productID>
         <q1:productText>
           <description lang="en">Object Dictionary used for built test.</description>
         </q1:productText>
@@ -757,7 +757,7 @@
           <q1:parameter uniqueID="UID_OBJ_1008">
             <label lang="en">Manufacturer device name</label>
             <STRING />
-            <q1:property name="CO_disabled" value="true" />
+            <q1:defaultValue value="XYZ Dummy Company" />
             <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
           </q1:parameter>
           <q1:parameter uniqueID="UID_OBJ_1009">
@@ -926,7 +926,7 @@
           <q1:parameter uniqueID="UID_OBJ_1017" access="readWrite">
             <description lang="en">Heartbeat producer time in ms (0 = disable transmission).</description>
             <UINT />
-            <q1:defaultValue value="0" />
+            <q1:defaultValue value="5000" />
             <q1:property name="CO_countLabel" value="HB_PROD" />
             <q1:property name="CO_storageGroup" value="PERSIST_COMM" />
           </q1:parameter>
@@ -2280,7 +2280,7 @@
         <ProfileTechnology>CANopen</ProfileTechnology>
       </ISO15745Reference>
     </ProfileHeader>
-    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="buildTest.xdd" fileCreator="Sicris Rey Embay" fileCreationDate="2023-11-26" fileCreationTime="10:02:04.0000000+08:00" fileModificationDate="2023-11-26" fileModificationTime="10:04:51.8805059+08:00" fileVersion="1" supportedLanguages="en" xmlns="">
+    <ProfileBody xmlns:q2="http://www.canopen.org/xml/1.1" xsi:type="q2:ProfileBody_CommunicationNetwork_CANopen" formatName="CANopen" formatVersion="1.0" fileName="buildTest.xdd" fileCreator="Sicris Rey Embay" fileCreationDate="2023-11-26" fileCreationTime="10:02:04.0000000+08:00" fileModificationDate="2023-12-01" fileModificationTime="08:15:36.3917976+08:00" fileVersion="1" supportedLanguages="en" xmlns="">
       <ApplicationLayers>
         <q2:CANopenObjectList>
           <CANopenObject index="1000" name="Device type" objectType="7" PDOmapping="no" uniqueIDRef="UID_OBJ_1000" />
@@ -2606,8 +2606,11 @@
       <TransportLayers>
         <PhysicalLayer>
           <baudRate>
+            <supportedBaudRate value="50 Kbps" />
+            <supportedBaudRate value="125 Kbps" />
             <supportedBaudRate value="250 Kbps" />
             <supportedBaudRate value="500 Kbps" />
+            <supportedBaudRate value="800 Kbps" />
             <supportedBaudRate value="1000 Kbps" />
           </baudRate>
         </PhysicalLayer>

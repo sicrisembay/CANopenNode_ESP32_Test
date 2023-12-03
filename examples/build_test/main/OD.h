@@ -16,14 +16,14 @@
 
         Created:      26/11/2023 10:02:04 am
         Created By:   Sicris Rey Embay
-        Modified:     26/11/2023 10:04:51 am
+        Modified:     1/12/2023 8:15:36 am
         Modified By:  Sicris Rey Embay
 
     Device Info:
-        Vendor Name:  
-        Vendor ID:    
+        Vendor Name:  Build Test
+        Vendor ID:    0
         Product Name: BuildTest
-        Product ID:   
+        Product ID:   1
 
         Description:  Object Dictionary used for built test.
 *******************************************************************************/
@@ -65,6 +65,7 @@ typedef struct {
     uint32_t x1005_COB_ID_SYNCMessage;
     uint32_t x1006_communicationCyclePeriod;
     uint32_t x1007_synchronousWindowLength;
+    char x1008_manufacturerDeviceName[18];
     uint32_t x1012_COB_IDTimeStampObject;
     uint32_t x1014_COB_ID_EMCY;
     uint16_t x1015_inhibitTimeEMCY;
@@ -269,33 +270,34 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1005 &OD->list[3]
 #define OD_ENTRY_H1006 &OD->list[4]
 #define OD_ENTRY_H1007 &OD->list[5]
-#define OD_ENTRY_H1010 &OD->list[6]
-#define OD_ENTRY_H1011 &OD->list[7]
-#define OD_ENTRY_H1012 &OD->list[8]
-#define OD_ENTRY_H1014 &OD->list[9]
-#define OD_ENTRY_H1015 &OD->list[10]
-#define OD_ENTRY_H1016 &OD->list[11]
-#define OD_ENTRY_H1017 &OD->list[12]
-#define OD_ENTRY_H1018 &OD->list[13]
-#define OD_ENTRY_H1019 &OD->list[14]
-#define OD_ENTRY_H1200 &OD->list[15]
-#define OD_ENTRY_H1280 &OD->list[16]
-#define OD_ENTRY_H1400 &OD->list[17]
-#define OD_ENTRY_H1401 &OD->list[18]
-#define OD_ENTRY_H1402 &OD->list[19]
-#define OD_ENTRY_H1403 &OD->list[20]
-#define OD_ENTRY_H1600 &OD->list[21]
-#define OD_ENTRY_H1601 &OD->list[22]
-#define OD_ENTRY_H1602 &OD->list[23]
-#define OD_ENTRY_H1603 &OD->list[24]
-#define OD_ENTRY_H1800 &OD->list[25]
-#define OD_ENTRY_H1801 &OD->list[26]
-#define OD_ENTRY_H1802 &OD->list[27]
-#define OD_ENTRY_H1803 &OD->list[28]
-#define OD_ENTRY_H1A00 &OD->list[29]
-#define OD_ENTRY_H1A01 &OD->list[30]
-#define OD_ENTRY_H1A02 &OD->list[31]
-#define OD_ENTRY_H1A03 &OD->list[32]
+#define OD_ENTRY_H1008 &OD->list[6]
+#define OD_ENTRY_H1010 &OD->list[7]
+#define OD_ENTRY_H1011 &OD->list[8]
+#define OD_ENTRY_H1012 &OD->list[9]
+#define OD_ENTRY_H1014 &OD->list[10]
+#define OD_ENTRY_H1015 &OD->list[11]
+#define OD_ENTRY_H1016 &OD->list[12]
+#define OD_ENTRY_H1017 &OD->list[13]
+#define OD_ENTRY_H1018 &OD->list[14]
+#define OD_ENTRY_H1019 &OD->list[15]
+#define OD_ENTRY_H1200 &OD->list[16]
+#define OD_ENTRY_H1280 &OD->list[17]
+#define OD_ENTRY_H1400 &OD->list[18]
+#define OD_ENTRY_H1401 &OD->list[19]
+#define OD_ENTRY_H1402 &OD->list[20]
+#define OD_ENTRY_H1403 &OD->list[21]
+#define OD_ENTRY_H1600 &OD->list[22]
+#define OD_ENTRY_H1601 &OD->list[23]
+#define OD_ENTRY_H1602 &OD->list[24]
+#define OD_ENTRY_H1603 &OD->list[25]
+#define OD_ENTRY_H1800 &OD->list[26]
+#define OD_ENTRY_H1801 &OD->list[27]
+#define OD_ENTRY_H1802 &OD->list[28]
+#define OD_ENTRY_H1803 &OD->list[29]
+#define OD_ENTRY_H1A00 &OD->list[30]
+#define OD_ENTRY_H1A01 &OD->list[31]
+#define OD_ENTRY_H1A02 &OD->list[32]
+#define OD_ENTRY_H1A03 &OD->list[33]
 
 
 /*******************************************************************************
@@ -307,33 +309,34 @@ extern OD_ATTR_OD OD_t *OD;
 #define OD_ENTRY_H1005_COB_ID_SYNCMessage &OD->list[3]
 #define OD_ENTRY_H1006_communicationCyclePeriod &OD->list[4]
 #define OD_ENTRY_H1007_synchronousWindowLength &OD->list[5]
-#define OD_ENTRY_H1010_storeParameters &OD->list[6]
-#define OD_ENTRY_H1011_restoreDefaultParameters &OD->list[7]
-#define OD_ENTRY_H1012_COB_IDTimeStampObject &OD->list[8]
-#define OD_ENTRY_H1014_COB_ID_EMCY &OD->list[9]
-#define OD_ENTRY_H1015_inhibitTimeEMCY &OD->list[10]
-#define OD_ENTRY_H1016_consumerHeartbeatTime &OD->list[11]
-#define OD_ENTRY_H1017_producerHeartbeatTime &OD->list[12]
-#define OD_ENTRY_H1018_identity &OD->list[13]
-#define OD_ENTRY_H1019_synchronousCounterOverflowValue &OD->list[14]
-#define OD_ENTRY_H1200_SDOServerParameter &OD->list[15]
-#define OD_ENTRY_H1280_SDOClientParameter &OD->list[16]
-#define OD_ENTRY_H1400_RPDOCommunicationParameter &OD->list[17]
-#define OD_ENTRY_H1401_RPDOCommunicationParameter &OD->list[18]
-#define OD_ENTRY_H1402_RPDOCommunicationParameter &OD->list[19]
-#define OD_ENTRY_H1403_RPDOCommunicationParameter &OD->list[20]
-#define OD_ENTRY_H1600_RPDOMappingParameter &OD->list[21]
-#define OD_ENTRY_H1601_RPDOMappingParameter &OD->list[22]
-#define OD_ENTRY_H1602_RPDOMappingParameter &OD->list[23]
-#define OD_ENTRY_H1603_RPDOMappingParameter &OD->list[24]
-#define OD_ENTRY_H1800_TPDOCommunicationParameter &OD->list[25]
-#define OD_ENTRY_H1801_TPDOCommunicationParameter &OD->list[26]
-#define OD_ENTRY_H1802_TPDOCommunicationParameter &OD->list[27]
-#define OD_ENTRY_H1803_TPDOCommunicationParameter &OD->list[28]
-#define OD_ENTRY_H1A00_TPDOMappingParameter &OD->list[29]
-#define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[30]
-#define OD_ENTRY_H1A02_TPDOMappingParameter &OD->list[31]
-#define OD_ENTRY_H1A03_TPDOMappingParameter &OD->list[32]
+#define OD_ENTRY_H1008_manufacturerDeviceName &OD->list[6]
+#define OD_ENTRY_H1010_storeParameters &OD->list[7]
+#define OD_ENTRY_H1011_restoreDefaultParameters &OD->list[8]
+#define OD_ENTRY_H1012_COB_IDTimeStampObject &OD->list[9]
+#define OD_ENTRY_H1014_COB_ID_EMCY &OD->list[10]
+#define OD_ENTRY_H1015_inhibitTimeEMCY &OD->list[11]
+#define OD_ENTRY_H1016_consumerHeartbeatTime &OD->list[12]
+#define OD_ENTRY_H1017_producerHeartbeatTime &OD->list[13]
+#define OD_ENTRY_H1018_identity &OD->list[14]
+#define OD_ENTRY_H1019_synchronousCounterOverflowValue &OD->list[15]
+#define OD_ENTRY_H1200_SDOServerParameter &OD->list[16]
+#define OD_ENTRY_H1280_SDOClientParameter &OD->list[17]
+#define OD_ENTRY_H1400_RPDOCommunicationParameter &OD->list[18]
+#define OD_ENTRY_H1401_RPDOCommunicationParameter &OD->list[19]
+#define OD_ENTRY_H1402_RPDOCommunicationParameter &OD->list[20]
+#define OD_ENTRY_H1403_RPDOCommunicationParameter &OD->list[21]
+#define OD_ENTRY_H1600_RPDOMappingParameter &OD->list[22]
+#define OD_ENTRY_H1601_RPDOMappingParameter &OD->list[23]
+#define OD_ENTRY_H1602_RPDOMappingParameter &OD->list[24]
+#define OD_ENTRY_H1603_RPDOMappingParameter &OD->list[25]
+#define OD_ENTRY_H1800_TPDOCommunicationParameter &OD->list[26]
+#define OD_ENTRY_H1801_TPDOCommunicationParameter &OD->list[27]
+#define OD_ENTRY_H1802_TPDOCommunicationParameter &OD->list[28]
+#define OD_ENTRY_H1803_TPDOCommunicationParameter &OD->list[29]
+#define OD_ENTRY_H1A00_TPDOMappingParameter &OD->list[30]
+#define OD_ENTRY_H1A01_TPDOMappingParameter &OD->list[31]
+#define OD_ENTRY_H1A02_TPDOMappingParameter &OD->list[32]
+#define OD_ENTRY_H1A03_TPDOMappingParameter &OD->list[33]
 
 
 /*******************************************************************************

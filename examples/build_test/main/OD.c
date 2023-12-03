@@ -25,12 +25,13 @@ OD_ATTR_PERSIST_COMM OD_PERSIST_COMM_t OD_PERSIST_COMM = {
     .x1005_COB_ID_SYNCMessage = 0x00000080,
     .x1006_communicationCyclePeriod = 0x00000000,
     .x1007_synchronousWindowLength = 0x00000000,
+    .x1008_manufacturerDeviceName = {'X', 'Y', 'Z', ' ', 'D', 'u', 'm', 'm', 'y', ' ', 'C', 'o', 'm', 'p', 'a', 'n', 'y', 0},
     .x1012_COB_IDTimeStampObject = 0x00000100,
     .x1014_COB_ID_EMCY = 0x00000080,
     .x1015_inhibitTimeEMCY = 0x0000,
     .x1016_consumerHeartbeatTime_sub0 = 0x08,
     .x1016_consumerHeartbeatTime = {0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000},
-    .x1017_producerHeartbeatTime = 0x0000,
+    .x1017_producerHeartbeatTime = 0x1388,
     .x1018_identity = {
         .highestSub_indexSupported = 0x04,
         .vendor_ID = 0x00000000,
@@ -216,6 +217,7 @@ typedef struct {
     OD_obj_var_t o_1005_COB_ID_SYNCMessage;
     OD_obj_var_t o_1006_communicationCyclePeriod;
     OD_obj_var_t o_1007_synchronousWindowLength;
+    OD_obj_var_t o_1008_manufacturerDeviceName;
     OD_obj_array_t o_1010_storeParameters;
     OD_obj_array_t o_1011_restoreDefaultParameters;
     OD_obj_var_t o_1012_COB_IDTimeStampObject;
@@ -278,6 +280,11 @@ static CO_PROGMEM ODObjs_t ODObjs = {
         .dataOrig = &OD_PERSIST_COMM.x1007_synchronousWindowLength,
         .attribute = ODA_SDO_RW | ODA_MB,
         .dataLength = 4
+    },
+    .o_1008_manufacturerDeviceName = {
+        .dataOrig = &OD_PERSIST_COMM.x1008_manufacturerDeviceName[0],
+        .attribute = ODA_SDO_R | ODA_STR,
+        .dataLength = 17
     },
     .o_1010_storeParameters = {
         .dataOrig0 = &OD_RAM.x1010_storeParameters_sub0,
@@ -1123,6 +1130,7 @@ static OD_ATTR_OD OD_entry_t ODList[] = {
     {0x1005, 0x01, ODT_VAR, &ODObjs.o_1005_COB_ID_SYNCMessage, NULL},
     {0x1006, 0x01, ODT_VAR, &ODObjs.o_1006_communicationCyclePeriod, NULL},
     {0x1007, 0x01, ODT_VAR, &ODObjs.o_1007_synchronousWindowLength, NULL},
+    {0x1008, 0x01, ODT_VAR, &ODObjs.o_1008_manufacturerDeviceName, NULL},
     {0x1010, 0x05, ODT_ARR, &ODObjs.o_1010_storeParameters, NULL},
     {0x1011, 0x05, ODT_ARR, &ODObjs.o_1011_restoreDefaultParameters, NULL},
     {0x1012, 0x01, ODT_VAR, &ODObjs.o_1012_COB_IDTimeStampObject, NULL},
